@@ -21,7 +21,8 @@ A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction
 文件夹 ulti下为读取数据的.py,分别为:
 - feature_extract.py  -- 提取特征,程序中没有用到该.py
 - get_data_train.py   -- 得到训练集和验证集,**测试集没有被用到**
-config.py为配置程序
+
+config.py为配置程序，程序中没有用到该.py
 
 **main_test_darnn.py为主程序**       
 ## 程序执行需求
