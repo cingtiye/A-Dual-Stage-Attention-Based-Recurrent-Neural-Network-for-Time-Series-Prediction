@@ -31,7 +31,9 @@ config.py为配置程序
 - tqdm
 
 ## 程序执行
+```python
 python main_test_darnn.py
+```
 程序执行后,会在log中保存模型和保存logs_xxxxxx,可以通过tensorboad --logdir logs_xxxxxx查看权重,
 偏置,损失函数等的收敛情况.
 
