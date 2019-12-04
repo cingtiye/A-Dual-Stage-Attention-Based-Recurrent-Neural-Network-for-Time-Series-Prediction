@@ -5,9 +5,9 @@ A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction
 (https://cseweb.ucsd.edu/~yaq007/NASDAQ100_stock_data.html)
 
 ## 文件夹介绍
-文件夹data下存放的是数据;
+文件夹data下存放的是数据*(运行程序后会自动生成)*;
 
-文件夹log下存放每一次运行保存的模型;
+文件夹log下存放每一次运行保存的模型*(运行程序后会自动生成)*;
 
 文件夹logs_xxxxx为保存的tensorboard(通过日期指定名称);
 
