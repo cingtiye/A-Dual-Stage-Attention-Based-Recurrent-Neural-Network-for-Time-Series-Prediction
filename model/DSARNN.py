@@ -381,7 +381,7 @@ class Attention(object):
                     last_cost = valid_cost
 
         except tf.errors.OutOfRangeError:
-            saver.save(sess, './log/DARNN_' + save_name + '/DARNN')
+            # saver.save(sess, './log/DARNN_' + save_name + '/DARNN')
             train_wirter.close()
             test_wirter.close()
             print("---Train end---")
