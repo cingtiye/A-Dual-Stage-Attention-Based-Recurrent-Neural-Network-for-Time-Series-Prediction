@@ -366,7 +366,7 @@ class Attention(object):
                         _iteration, _arr_valid_metrict[0], _arr_valid_metrict[1], _arr_valid_metrict[2]))
 
                     # if valid_cost < 0.0001:
-                    #     saver.save(sess, config.ROOT_PATH + '/log/DARNN_' + time.strftime +save_name + '/DARNN')
+                    #     saver.save(sess, config.ROOT_PATH + '/_models/DARNN_' + time.strftime +save_name + '/DARNN')
                     #     break
                 # if epoch % 10000 == 0:
                 #     self.LEARN_RATE = self.LEARN_RATE * (1 - 0.1)
@@ -374,21 +374,21 @@ class Attention(object):
                     if np.abs(valid_cost - last_cost) < 2:
                         early_epoch += 1
                         if early_epoch > 1000:
-                            saver.save(sess, './log/DARNN_' + save_name + '/DARNN')
+                            saver.save(sess, './_models/DARNN_' + save_name + '/DARNN')
                             break
                     else:
                         early_epoch = 0
                     last_cost = valid_cost
 
         except tf.errors.OutOfRangeError:
-            # saver.save(sess, './log/DARNN_' + save_name + '/DARNN')
+            # saver.save(sess, './_models/DARNN_' + save_name + '/DARNN')
             train_wirter.close()
             test_wirter.close()
             print("---Train end---")
         finally:
             coord.request_stop()
             print('---Program end---')
-            saver.save(sess, './log/DARNN_' + save_name + '/DARNN')
+            saver.save(sess, './_models/DARNN_' + save_name + '/DARNN')
             train_wirter.close()
             test_wirter.close()
         coord.join(threads)
@@ -402,8 +402,8 @@ class Attention(object):
         saver = tf.train.Saver()
         sess = tf.Session(config=config)
         merged = tf.summary.merge_all()
-        train_wirter = tf.summary.FileWriter('./logs_'+time.strftime("%Y%m%d%H%M")+'/train/', sess.graph)
-        test_wirter = tf.summary.FileWriter('./logs_'+time.strftime("%Y%m%d%H%M")+'/test/')
+        train_wirter = tf.summary.FileWriter('./_logs/logs_'+time.strftime("%Y%m%d%H%M")+'/train/', sess.graph)
+        test_wirter = tf.summary.FileWriter('./_logs/logs_'+time.strftime("%Y%m%d%H%M")+'/test/')
         sess.run(tf.global_variables_initializer())
         sess.run(tf.local_variables_initializer())
         return saver, sess, merged, train_wirter, test_wirter
