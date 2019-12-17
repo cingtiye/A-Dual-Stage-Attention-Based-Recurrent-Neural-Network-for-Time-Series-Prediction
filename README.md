@@ -35,7 +35,7 @@ config.py为配置程序，程序中没有用到该.py
 ```python
 python main_test_darnn.py
 ```
-程序执行后,会分别在log中保存模型，logs_xxxxxx中保存向量和损失函数等,可以通过tensorboad --logdir ./_logs/logs_xxxxxx查看权重,
+程序执行后,会分别在log中保存模型，logs_xxxxxx中保存向量和损失函数等,可以通过tensorboard --logdir ./_logs/logs_xxxxxx查看权重,
 偏置,损失函数等的收敛情况.
 
 ### 关于文章的简单介绍,可以看我的[博客](https://www.jianshu.com/p/cb9767ce73f0),欢迎交流留言 ~~
