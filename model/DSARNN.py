@@ -3,6 +3,7 @@
 import numpy as np
 import config
 import time
+import os
 import tensorflow as tf
 tf.set_random_seed(2019)
 import warnings
@@ -402,6 +403,10 @@ class Attention(object):
         saver = tf.train.Saver()
         sess = tf.Session(config=config)
         merged = tf.summary.merge_all()
+        if not os.path.exists('./_models/'):
+            os.makedirs('./_models/')
+        if not os.path.exists('./_logs/'):
+            os.makedirs('./_logs/')
         train_wirter = tf.summary.FileWriter('./_logs/logs_'+time.strftime("%Y%m%d%H%M")+'/train/', sess.graph)
         test_wirter = tf.summary.FileWriter('./_logs/logs_'+time.strftime("%Y%m%d%H%M")+'/test/')
         sess.run(tf.global_variables_initializer())
