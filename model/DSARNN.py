@@ -241,7 +241,7 @@ class Attention(object):
                                                                     x_t   = x_t,
                                                                     name  = 'Encode_LSTMCell')
             encode_time_step_hidden.append(self.encode_hidden)
-        return tf.reshape(tf.stack(encode_time_step_hidden), [-1, self.TIME_STEP, self.DECODE_CELL])
+        return tf.reshape(tf.stack(encode_time_step_hidden), [-1, self.TIME_STEP, self.ENCODE_CELL])
 
     ## 解码器中加入Attention
     def _Decode(self, decode_input=None, y_t=None):
